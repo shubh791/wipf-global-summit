@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #02040a;
+  --foreground: #f8fafc;
 }
 
 @theme inline {
@@ -12,15 +12,186 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  background: #02040a;
+  color: #f8fafc;
+  overflow-x: hidden;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================================
+   CINEMATIC KEYFRAME ANIMATIONS
+   ========================================================================= */
+
+/* Top Forum Identity Reveal */
+@keyframes forumReveal {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Central SVG Globe Scale & Opacity Reveal */
+@keyframes globeDraw {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Asymmetric Card Reveal (Left: Bangkok) */
+@keyframes cardRevealLeft {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) translateX(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Asymmetric Card Reveal (Right: Bengaluru) */
+@keyframes cardRevealRight {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) translateX(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* Telemetry Capsule Fade In */
+@keyframes telemetryFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Center WIPF Core Subtle Breathing Pulse */
+@keyframes orbPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.35);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 30px rgba(6, 182, 212, 0.6);
+  }
+}
+
+/* Center Global Ambient Glow Breathing */
+@keyframes orbGlow {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+/* Continuous Slow Rotations for Orbital Elements */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinVerySlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================================
+   ANIMATION UTILITY CLASSES
+   ========================================================================= */
+
+.animate-forum-reveal {
+  animation: forumReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-globe-draw {
+  animation: globeDraw 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-card-reveal-left {
+  animation: cardRevealLeft 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-card-reveal-right {
+  animation: cardRevealRight 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: telemetryFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-orb-pulse {
+  animation: orbPulse 5s ease-in-out infinite;
+}
+
+.animate-orb-glow {
+  animation: orbGlow 5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 50s linear infinite;
+}
+
+.animate-spin-veryslow {
+  animation: spinVerySlow 32s linear infinite;
+}
+
+/* =========================================================================
+   ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   ========================================================================= */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-spin-slow,
+  .animate-spin-veryslow,
+  .animate-orb-pulse,
+  .animate-orb-glow {
+    animation: none !important;
+    transform: none !important;
+  }
 }
