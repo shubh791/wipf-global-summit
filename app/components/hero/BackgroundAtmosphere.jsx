@@ -46,7 +46,7 @@ export default function BackgroundAtmosphere({ parallaxOffset = { x: 0, y: 0 } }
 
       {/* Bangkok Sunset Warmth Aurora (Lower-Left Flank) - Desktop Only */}
       <div
-        className="hidden lg:block absolute -bottom-24 -left-24 w-[650px] sm:w-[850px] h-[650px] sm:h-[850px] rounded-full pointer-events-none will-change-transform"
+        className="hidden xl:block absolute -bottom-24 -left-24 w-[650px] sm:w-[850px] h-[650px] sm:h-[850px] rounded-full pointer-events-none will-change-transform"
         style={{
           background:
             "radial-gradient(circle, rgba(245,158,11,0.25) 0%, rgba(244,63,94,0.12) 45%, transparent 75%)",
@@ -55,10 +55,10 @@ export default function BackgroundAtmosphere({ parallaxOffset = { x: 0, y: 0 } }
         }}
       />
 
-      {/* Mobile Celestial Sapphire Glow (Maintains uniform 'above blue' cosmic theme across entire mobile height) */}
+      {/* Mobile/Tablet Celestial Sapphire Glow (Maintains uniform 'above blue' cosmic theme across entire mobile & tablet height) */}
       <div
         aria-hidden="true"
-        className="lg:hidden absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[550px] h-[550px] rounded-full pointer-events-none"
+        className="xl:hidden absolute bottom-1/4 left-1/2 -translate-x-1/2 w-[550px] sm:w-[700px] h-[550px] sm:h-[700px] rounded-full pointer-events-none"
         style={{
           background:
             "radial-gradient(circle, rgba(6,182,212,0.18) 0%, rgba(37,99,235,0.12) 45%, transparent 75%)",
@@ -82,7 +82,7 @@ export default function BackgroundAtmosphere({ parallaxOffset = { x: 0, y: 0 } }
           ========================================================================= */}
       {/* Left Flank: Bangkok Wat Arun Sunset Architectural Horizon - Desktop Only */}
       <div
-        className="hidden lg:block absolute bottom-0 left-0 w-[50vw] max-w-[760px] h-[68vh] overflow-hidden opacity-38 pointer-events-none"
+        className="hidden xl:block absolute bottom-0 left-0 w-[50vw] max-w-[760px] h-[68vh] overflow-hidden opacity-38 pointer-events-none"
         style={{
           maskImage:
             "linear-gradient(to right, rgba(0,0,0,1) 0%, rgba(0,0,0,0.55) 45%, transparent 80%), linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 50%, transparent 92%)",
@@ -116,7 +116,7 @@ export default function BackgroundAtmosphere({ parallaxOffset = { x: 0, y: 0 } }
 
       {/* Right Flank: Bengaluru Vidhana Soudha Twilight Horizon - Desktop Only */}
       <div
-        className="hidden lg:block absolute bottom-0 right-0 w-[50vw] max-w-[760px] h-[68vh] overflow-hidden opacity-38 pointer-events-none"
+        className="hidden xl:block absolute bottom-0 right-0 w-[50vw] max-w-[760px] h-[68vh] overflow-hidden opacity-38 pointer-events-none"
         style={{
           maskImage:
             "linear-gradient(to left, rgba(0,0,0,1) 0%, rgba(0,0,0,0.55) 45%, transparent 80%), linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.75) 50%, transparent 92%)",
@@ -153,7 +153,7 @@ export default function BackgroundAtmosphere({ parallaxOffset = { x: 0, y: 0 } }
           ========================================================================= */}
       <svg
         viewBox="0 0 1400 900"
-        className="hidden lg:block absolute inset-0 w-full h-full object-cover pointer-events-none opacity-40"
+        className="hidden xl:block absolute inset-0 w-full h-full object-cover pointer-events-none opacity-40"
         preserveAspectRatio="none"
       >
         <defs>

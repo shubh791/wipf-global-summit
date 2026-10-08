@@ -35,7 +35,7 @@ export default function GlobalNetworkCanvas({ hoveredCity, onGlobeHover }) {
       />
 
       {/* Main Holographic Globe Stage */}
-      <div className="relative w-[280px] sm:w-[340px] md:w-[390px] lg:w-[420px] xl:w-[460px] aspect-square flex items-center justify-center">
+      <div className="relative w-[270px] sm:w-[320px] md:w-[350px] lg:w-[380px] xl:w-[460px] aspect-square flex items-center justify-center">
         {/* Outer Tech Coordinate Ring */}
         <div
           aria-hidden="true"

@@ -76,9 +76,9 @@ export default function Hero() {
       </div>
 
       {/* =========================================================================
-          DESKTOP VIEWPORT (lg: 1024px+): Balanced 4-Corner Spatial Composition
+          DESKTOP VIEWPORT (xl: 1280px+): Balanced 4-Corner Spatial Composition
           ========================================================================= */}
-      <div className="hidden lg:flex relative z-10 flex-1 w-full max-w-[1520px] mx-auto items-center justify-center px-6 lg:px-8 xl:px-12 py-2">
+      <div className="hidden xl:flex relative z-10 flex-1 w-full max-w-[1520px] mx-auto items-center justify-center px-6 lg:px-8 xl:px-12 py-2">
         {/* =========================================================================
             ACTIVE CONNECTOR LINES: Optical Data Beams Linking Cards to Globe Beacons
             ========================================================================= */}
@@ -282,37 +282,44 @@ export default function Hero() {
       </div>
 
       {/* =========================================================================
-          MOBILE & TABLET VIEWPORT (< 1024px): Mobile-First Vertical Sequence
+          RESPONSIVE TABLET & MOBILE VIEWPORT (< 1280px / Tablets & Mobile Phones)
           ========================================================================= */}
-      <div className="flex lg:hidden relative z-10 flex-col w-full min-h-[100svh] px-4 sm:px-6 pt-2 pb-12 gap-5 sm:gap-6 items-center justify-start">
-        {/* Mobile Metric Strip directly beneath header */}
-        <div className="w-full max-w-[370px] sm:max-w-[380px] z-20 flex justify-center">
+      <div className="flex xl:hidden relative z-10 flex-col w-full min-h-[100svh] px-4 sm:px-6 md:px-8 pt-2 pb-12 gap-5 sm:gap-6 items-center justify-start">
+        {/* Metric Badges Strip directly beneath header */}
+        <div className="w-full max-w-[370px] sm:max-w-[760px] md:max-w-[800px] lg:max-w-[840px] z-20 flex justify-center">
           <MobileTelemetryStrip />
         </div>
 
         {/* Central Feature: Responsive 3D Globe Visualization */}
-        <div className="relative z-10 my-1 flex justify-center w-full">
+        <div className="relative z-10 my-1 sm:my-2 flex justify-center w-full">
           <GlobalNetworkCanvas hoveredCity={null} onGlobeHover={() => {}} />
         </div>
 
-        {/* Bangkok Destination Card */}
-        <div className="w-full max-w-[370px] sm:max-w-[380px] z-20 flex justify-center">
-          <CityCard
-            city={summitData.bangkok}
-            isHovered={false}
-            onMouseEnter={() => {}}
-            onMouseLeave={() => {}}
-          />
-        </div>
+        {/* Dual Destination Cards Container:
+            - Mobile (< 640px): 1-column stack, centered with mx-auto
+            - Tablet (640px - 1279px): 2-column side-by-side grid, balanced & symmetrical */}
+        <div className="w-full max-w-[370px] sm:max-w-[760px] md:max-w-[800px] lg:max-w-[840px] z-20 mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 md:gap-6 lg:gap-8 w-full items-stretch justify-items-center">
+            {/* Bangkok Destination Card */}
+            <div className="w-full flex justify-center">
+              <CityCard
+                city={summitData.bangkok}
+                isHovered={false}
+                onMouseEnter={() => {}}
+                onMouseLeave={() => {}}
+              />
+            </div>
 
-        {/* Bengaluru Destination Card */}
-        <div className="w-full max-w-[370px] sm:max-w-[380px] z-20 flex justify-center">
-          <CityCard
-            city={summitData.bengaluru}
-            isHovered={false}
-            onMouseEnter={() => {}}
-            onMouseLeave={() => {}}
-          />
+            {/* Bengaluru Destination Card */}
+            <div className="w-full flex justify-center">
+              <CityCard
+                city={summitData.bengaluru}
+                isHovered={false}
+                onMouseEnter={() => {}}
+                onMouseLeave={() => {}}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

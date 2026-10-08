@@ -75,7 +75,7 @@ export function MobileTelemetryStrip() {
   return (
     <div
       aria-label="Global Summit Metrics Strip"
-      className="flex lg:hidden items-center justify-center gap-2 sm:gap-3 px-3.5 py-1.5 rounded-full bg-white/[0.05] backdrop-blur-md border border-white/10 text-[9.5px] sm:text-[10px] font-bold tracking-wider uppercase text-white/85 shadow-sm max-w-full overflow-x-auto select-none"
+      className="flex xl:hidden items-center justify-center gap-2 sm:gap-3 px-3.5 py-1.5 rounded-full bg-white/[0.05] backdrop-blur-md border border-white/10 text-[9.5px] sm:text-[10px] font-bold tracking-wider uppercase text-white/85 shadow-sm max-w-full overflow-x-auto select-none"
     >
       <span className="text-amber-300">✦ 120+ NATIONS</span>
       <span className="text-white/30">|</span>
