@@ -284,19 +284,19 @@ export default function Hero() {
       {/* =========================================================================
           MOBILE & TABLET VIEWPORT (< 1024px): Mobile-First Vertical Sequence
           ========================================================================= */}
-      <div className="flex lg:hidden relative z-10 flex-col w-full min-h-[100svh] px-4 pt-2 pb-12 gap-6 items-center justify-start">
+      <div className="flex lg:hidden relative z-10 flex-col w-full min-h-[100svh] px-4 sm:px-6 pt-2 pb-12 gap-5 sm:gap-6 items-center justify-start">
         {/* Mobile Metric Strip directly beneath header */}
-        <div className="w-full max-w-[360px] z-20">
+        <div className="w-full max-w-[370px] sm:max-w-[380px] z-20 flex justify-center">
           <MobileTelemetryStrip />
         </div>
 
         {/* Central Feature: Responsive 3D Globe Visualization */}
-        <div className="relative z-10 my-1">
+        <div className="relative z-10 my-1 flex justify-center w-full">
           <GlobalNetworkCanvas hoveredCity={null} onGlobeHover={() => {}} />
         </div>
 
         {/* Bangkok Destination Card */}
-        <div className="w-full max-w-[360px] z-20">
+        <div className="w-full max-w-[370px] sm:max-w-[380px] z-20 flex justify-center">
           <CityCard
             city={summitData.bangkok}
             isHovered={false}
@@ -306,7 +306,7 @@ export default function Hero() {
         </div>
 
         {/* Bengaluru Destination Card */}
-        <div className="w-full max-w-[360px] z-20">
+        <div className="w-full max-w-[370px] sm:max-w-[380px] z-20 flex justify-center">
           <CityCard
             city={summitData.bengaluru}
             isHovered={false}

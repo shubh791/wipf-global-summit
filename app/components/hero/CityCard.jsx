@@ -23,7 +23,7 @@ export default function CityCard({
   return (
     <article
       aria-label={`${city.heroCity} Summit Destination Card`}
-      className={`relative w-full max-w-[340px] sm:max-w-[360px] lg:max-w-[340px] xl:max-w-[370px] rounded-3xl p-5 flex flex-col gap-3.5 select-none backdrop-blur-2xl border border-white/12 bg-[#040922]/90 shadow-[0_24px_55px_rgba(0,0,0,0.85)] ${className}`}
+      className={`relative w-full max-w-[370px] sm:max-w-[380px] lg:max-w-[340px] xl:max-w-[370px] mx-auto rounded-3xl p-5 flex flex-col gap-3.5 select-none backdrop-blur-2xl border border-white/12 bg-[#040922]/90 shadow-[0_24px_55px_rgba(0,0,0,0.85)] ${className}`}
     >
       {/* =========================================================================
           TOP: Summit Identity, Year Tag & Status Indicator
