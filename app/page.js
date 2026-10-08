@@ -6,7 +6,7 @@ import Hero from "./components/hero/Hero";
  */
 export default function Home() {
   return (
-    <main className="min-h-[100svh] w-full bg-[#02040a] text-white overflow-hidden">
+    <main className="min-h-[100svh] sm:h-[100svh] sm:max-h-[100svh] w-full bg-[#02040a] text-white overflow-hidden">
       <Hero />
     </main>
   );

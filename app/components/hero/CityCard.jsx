@@ -119,7 +119,7 @@ export default function CityCard({
       {/* =========================================================================
           CENTER: Generous Architectural Photographic Window
           ========================================================================= */}
-      <div className="relative w-full h-32 sm:h-36 rounded-2xl overflow-hidden border border-white/15 bg-black/50 shadow-inner">
+      <div className="relative w-full h-32 sm:h-36 lg:h-38 rounded-2xl overflow-hidden border border-white/15 bg-black/50 shadow-inner">
         <Image
           src={city.image}
           alt={city.alt}

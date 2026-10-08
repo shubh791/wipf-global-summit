@@ -58,7 +58,7 @@ export default function Hero() {
     <section
       aria-label="World Intellectual Property Forum 2026-2027 Global Summits"
       onMouseMove={handleMouseMove}
-      className="relative w-full min-h-[100svh] bg-[#02040a] text-white overflow-x-hidden overflow-y-auto lg:overflow-hidden select-none flex flex-col justify-between"
+      className="relative w-full min-h-[100svh] sm:h-[100svh] sm:max-h-[100svh] bg-[#02040a] text-white overflow-x-hidden overflow-y-auto sm:overflow-hidden select-none flex flex-col justify-between"
     >
       {/* Layer 1: Atmospheric Background with blended city skylines, nebula auras & fiber streams */}
       <BackgroundAtmosphere parallaxOffset={mouseOffset} />
@@ -284,14 +284,14 @@ export default function Hero() {
       {/* =========================================================================
           RESPONSIVE TABLET & MOBILE VIEWPORT (< 1280px / Tablets & Mobile Phones)
           ========================================================================= */}
-      <div className="flex xl:hidden relative z-10 flex-col w-full min-h-[100svh] px-4 sm:px-6 md:px-8 pt-2 pb-12 gap-5 sm:gap-6 items-center justify-start">
+      <div className="flex xl:hidden relative z-10 flex-col w-full min-h-fit sm:min-h-0 sm:flex-1 sm:overflow-hidden px-4 sm:px-6 md:px-8 pt-2 sm:pt-1 pb-12 sm:pb-4 items-center justify-start sm:justify-around gap-5 sm:gap-0">
         {/* Metric Badges Strip directly beneath header */}
         <div className="w-full max-w-[370px] sm:max-w-[760px] md:max-w-[800px] lg:max-w-[840px] z-20 flex justify-center">
           <MobileTelemetryStrip />
         </div>
 
         {/* Central Feature: Responsive 3D Globe Visualization */}
-        <div className="relative z-10 my-1 sm:my-2 flex justify-center w-full">
+        <div className="relative z-10 my-1 sm:my-0 flex justify-center w-full">
           <GlobalNetworkCanvas hoveredCity={null} onGlobeHover={() => {}} />
         </div>
 
