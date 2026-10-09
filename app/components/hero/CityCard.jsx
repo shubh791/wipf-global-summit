@@ -119,29 +119,35 @@ export default function CityCard({
       {/* =========================================================================
           CENTER: Generous Architectural Photographic Window
           ========================================================================= */}
-      <div className="relative w-full h-32 sm:h-36 lg:h-38 rounded-2xl overflow-hidden border border-white/15 bg-black/50 shadow-inner">
+      <div className="group/window relative w-full h-36 sm:h-40 lg:h-40 rounded-2xl overflow-hidden border border-white/15 bg-[#020617] shadow-inner flex items-center justify-center">
         <Image
           src={city.image}
           alt={city.alt}
           fill
           sizes="(max-width: 768px) 100vw, 380px"
-          className="object-cover object-center pointer-events-none"
+          className="object-cover object-center pointer-events-none transition-transform duration-700 group-hover/window:scale-105"
         />
 
-        {/* Bottom gradient inside photo */}
+        {/* Subtle bottom atmospheric vignette */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-[#020514]/85 via-transparent to-transparent pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-t from-[#020514]/40 via-transparent to-transparent pointer-events-none"
         />
 
         {/* Ambient Color Atmosphere Overlay */}
         <div
           aria-hidden="true"
-          className={`absolute inset-0 pointer-events-none mix-blend-screen opacity-55 ${
+          className={`absolute inset-0 pointer-events-none mix-blend-screen opacity-40 ${
             isBangkok
-              ? "bg-gradient-to-tr from-amber-600/30 via-orange-500/10 to-transparent"
-              : "bg-gradient-to-tr from-cyan-600/30 via-blue-600/10 to-transparent"
+              ? "bg-gradient-to-tr from-amber-600/25 via-rose-500/10 to-transparent"
+              : "bg-gradient-to-tr from-cyan-600/25 via-blue-600/10 to-transparent"
           }`}
+        />
+
+        {/* Recessed glass rim light */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 ring-1 ring-inset ring-white/12 rounded-2xl pointer-events-none"
         />
       </div>
 

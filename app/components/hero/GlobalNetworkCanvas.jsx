@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
 /**
@@ -10,13 +10,21 @@ import Image from "next/image";
  * - Luminous cyan continents and India-Thailand connection arc floating seamlessly in space
  * - Interactive SVG radar beacons over Bengaluru & Bangkok with traveling photon pulses
  * - Ambient celestial orbital rings and live status caption
+ * - Hydration-safe mounting for SVG SMIL animations and clean HTML anchor targets
  */
 export default function GlobalNetworkCanvas({ hoveredCity, onGlobeHover }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const isBangkok = hoveredCity === "bangkok";
   const isBengaluru = hoveredCity === "bengaluru";
 
   return (
     <div
+      suppressHydrationWarning
       aria-label="World Intellectual Property Forum — Global Connection Visualization"
       onMouseEnter={() => onGlobeHover?.(true)}
       onMouseLeave={() => onGlobeHover?.(false)}
@@ -53,7 +61,7 @@ export default function GlobalNetworkCanvas({ hoveredCity, onGlobeHover }) {
 
         {/* 8K 3D Holographic Earth Sphere — Transparent PNG with ZERO black background around it */}
         <div
-          className="relative w-full h-full flex items-center justify-center transition-transform duration-700 ease-out pointer-events-none"
+          className="relative w-full h-full flex items-center justify-center transition-transform duration-700 ease-out"
           style={{
             transform: isBangkok
               ? "rotate(-3deg) scale(1.02)"
@@ -71,8 +79,39 @@ export default function GlobalNetworkCanvas({ hoveredCity, onGlobeHover }) {
             className="object-contain object-center pointer-events-none select-none filter drop-shadow-[0_0_35px_rgba(6,182,212,0.45)]"
           />
 
+          {/* Native HTML Click Targets Matching City Card Explore Links with full back-button history */}
+          <a
+            href="https://www.igisummit.com/"
+            aria-label="Explore Bengaluru Indo Global IPR Summit 2027"
+            title="Explore Bengaluru Indo Global IPR Summit 2027"
+            className="absolute z-20 cursor-pointer rounded-xl focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400"
+            style={{
+              left: "29%",
+              top: "32%",
+              width: "25%",
+              height: "14%",
+            }}
+          >
+            <span className="sr-only">Explore Bengaluru Indo Global IPR Summit 2027</span>
+          </a>
+          <a
+            href="https://aipxglobal.com/"
+            aria-label="Explore Bangkok AIPx Global Summit 2026"
+            title="Explore Bangkok AIPx Global Summit 2026"
+            className="absolute z-20 cursor-pointer rounded-xl focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-amber-400"
+            style={{
+              left: "61%",
+              top: "40%",
+              width: "24%",
+              height: "13%",
+            }}
+          >
+            <span className="sr-only">Explore Bangkok AIPx Global Summit 2026</span>
+          </a>
+
           {/* Interactive SVG Overlay (Radar Beacons & Live Traveling Photons) */}
           <svg
+            suppressHydrationWarning
             viewBox="0 0 100 100"
             className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-10"
           >
@@ -163,21 +202,25 @@ export default function GlobalNetworkCanvas({ hoveredCity, onGlobeHover }) {
               fill="none"
               stroke="transparent"
             />
-            <circle r="0.9" fill="#ffffff" filter="url(#livePhotonGlow)">
-              <animateMotion
-                path="M 48,40.5 Q 57,36 66,46.5"
-                dur="2s"
-                repeatCount="indefinite"
-              />
-            </circle>
-            {/* Reverse Echo Photon */}
-            <circle r="0.7" fill="#38bdf8">
-              <animateMotion
-                path="M 66,46.5 Q 57,36 48,40.5"
-                dur="2.8s"
-                repeatCount="indefinite"
-              />
-            </circle>
+            {mounted && (
+              <>
+                <circle r="0.9" fill="#ffffff" filter="url(#livePhotonGlow)">
+                  <animateMotion
+                    path="M 48,40.5 Q 57,36 66,46.5"
+                    dur="2s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+                {/* Reverse Echo Photon */}
+                <circle r="0.7" fill="#38bdf8">
+                  <animateMotion
+                    path="M 66,46.5 Q 57,36 48,40.5"
+                    dur="2.8s"
+                    repeatCount="indefinite"
+                  />
+                </circle>
+              </>
+            )}
           </svg>
         </div>
       </div>
@@ -185,7 +228,8 @@ export default function GlobalNetworkCanvas({ hoveredCity, onGlobeHover }) {
       {/* Supporting Global Caption */}
       <div className="flex items-center gap-2 mt-4 px-3.5 py-1 rounded-full bg-[#030612]/85 backdrop-blur-md border border-white/12 shadow-lg pointer-events-none">
         <span className="text-[8.5px] sm:text-[9.5px] font-bold tracking-[0.28em] uppercase text-cyan-200/90 flex items-center gap-2">
-          <span className="text-[7.5px] text-rose-400">✦</span> TWO SUMMITS · ONE GLOBAL FORUM{" "}
+          <span className="text-[7.5px] text-rose-400">✦</span>
+          <span>TWO SUMMITS · ONE GLOBAL FORUM</span>
           <span className="text-[7.5px] text-cyan-400">✦</span>
         </span>
       </div>

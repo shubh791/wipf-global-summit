@@ -22,8 +22,8 @@ export const summitData = {
       href: "https://aipxglobal.com/",
       ariaLabel: "Explore AIPx Global Summit 2026 in Bangkok",
     },
-    image: "/images/bangkok-hero.jpg",
-    alt: "Wat Arun illuminated at sunset along Chao Phraya River with Bangkok cityscape",
+    image: "/images/aipx-global-banner-v3.jpg",
+    alt: "AIPx Global Summit — Think Protect Exchange Bangkok",
     theme: {
       ambientGlow: "rgba(249, 115, 22, 0.18)",
       accentBorder: "rgba(249, 115, 22, 0.4)",
@@ -56,8 +56,8 @@ export const summitData = {
       href: "https://www.igisummit.com/",
       ariaLabel: "Explore Indo Global IPR Summit 2027 in Bengaluru",
     },
-    image: "/images/bengaluru-hero.jpg",
-    alt: "Vidhana Soudha illuminated at twilight with lush gardens and Bengaluru cityscape",
+    image: "/images/indo-global-banner-v3.jpg",
+    alt: "Indo Global IPR Summit Bengaluru",
     theme: {
       ambientGlow: "rgba(6, 182, 212, 0.18)",
       accentBorder: "rgba(6, 182, 212, 0.4)",
