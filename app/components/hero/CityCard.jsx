@@ -30,53 +30,26 @@ export default function CityCard({
           ========================================================================= */}
       <div className="flex flex-col gap-1.5">
         <div className="flex items-center justify-between gap-2">
-          {/* Logo Brand Lockup */}
-          {isBangkok ? (
-            <div className="flex items-center gap-2 min-w-0">
-              <span className="text-xl sm:text-2xl font-black tracking-tight text-white drop-shadow-sm">
-                {city.brand.lead}
-                <span className="italic font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-rose-400 ml-0.5">
-                  {city.brand.accent}
-                </span>
-              </span>
-              <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold tracking-wider text-white bg-gradient-to-r from-pink-600 to-indigo-600 shadow-[0_0_10px_rgba(236,72,153,0.4)] border border-pink-400/30">
-                {city.edition}
-              </span>
-            </div>
-          ) : (
-            <div className="flex items-center gap-1.5 min-w-0">
-              <div className="flex items-center">
-                <span className="text-lg sm:text-xl font-black tracking-tight text-white drop-shadow-sm">
-                  {city.brand.lead}
-                </span>
-                <span
-                  aria-hidden="true"
-                  className="inline-flex items-center justify-center w-4 h-4 mx-0.5 rounded-full bg-gradient-to-tr from-blue-600 to-cyan-400 text-white shadow-[0_0_8px_rgba(6,182,212,0.5)]"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    className="w-2.5 h-2.5 animate-spin-veryslow"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                    <path d="M2 12h20" />
-                  </svg>
-                </span>
-                <span className="text-lg sm:text-xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-rose-400 to-red-400 ml-0.5">
-                  {city.brand.accent}
-                </span>
-                <sup className="text-[7px] text-pink-300 font-bold ml-0.5 -top-1.5">
-                  {city.brand.trademark}
-                </sup>
-              </div>
-              <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9.5px] font-bold tracking-wider text-white bg-gradient-to-r from-blue-600 to-cyan-500 shadow-[0_0_10px_rgba(6,182,212,0.4)] border border-cyan-400/30">
-                {city.edition}
-              </span>
-            </div>
-          )}
+          {/* Official Summit Brand Logo Lockup */}
+          <div className="flex items-center gap-2 min-w-0">
+            <Image
+              src={city.logo}
+              alt={isBangkok ? "AIPx Global Summit" : "Indo Global IPR Summit"}
+              width={isBangkok ? 924 : 960}
+              height={200}
+              priority
+              className="w-auto object-contain pointer-events-none filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] h-[25px] sm:h-[28px]"
+            />
+            <span
+              className={`inline-flex items-center px-1.5 py-0.5 rounded text-[9.5px] font-bold tracking-wider text-white border shadow-sm shrink-0 ${
+                isBangkok
+                  ? "bg-gradient-to-r from-pink-600 to-indigo-600 border-pink-400/30 shadow-[0_0_10px_rgba(236,72,153,0.4)]"
+                  : "bg-gradient-to-r from-blue-600 to-cyan-500 border-cyan-400/30 shadow-[0_0_10px_rgba(6,182,212,0.4)]"
+              }`}
+            >
+              {city.edition}
+            </span>
+          </div>
 
           {/* Active Status Badge */}
           <span
@@ -119,7 +92,7 @@ export default function CityCard({
       {/* =========================================================================
           CENTER: Generous Architectural Photographic Window
           ========================================================================= */}
-      <div className="group/window relative w-full h-36 sm:h-40 lg:h-40 rounded-2xl overflow-hidden border border-white/15 bg-[#020617] shadow-inner flex items-center justify-center">
+      <div className="group/window relative w-full h-32 sm:h-36 lg:h-36 rounded-2xl overflow-hidden border border-white/15 bg-black/50 shadow-inner">
         <Image
           src={city.image}
           alt={city.alt}
@@ -131,7 +104,7 @@ export default function CityCard({
         {/* Subtle bottom atmospheric vignette */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-[#020514]/40 via-transparent to-transparent pointer-events-none"
+          className="absolute inset-0 bg-gradient-to-t from-[#020514]/65 via-transparent to-transparent pointer-events-none"
         />
 
         {/* Ambient Color Atmosphere Overlay */}
