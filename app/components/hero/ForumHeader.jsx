@@ -25,14 +25,20 @@ export default function ForumHeader() {
         {/* Master Forum Logo Lockup */}
         <h1 className="relative z-10 flex items-center justify-center m-0 p-0">
           <span className="sr-only">World Intellectual Property Forum</span>
-          <Image
-            src="/images/wipf-world-forum-logo.png"
-            alt="World Intellectual Property Forum"
-            width={874}
-            height={296}
-            priority
-            className="w-[180px] sm:w-[220px] md:w-[260px] lg:w-[290px] xl:w-[320px] h-auto object-contain pointer-events-none transition-all duration-500 filter drop-shadow-[0_0_16px_rgba(6,182,212,0.45)] drop-shadow-[0_0_36px_rgba(59,130,246,0.25)] drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] group-hover:drop-shadow-[0_0_24px_rgba(56,189,248,0.7)] group-hover:scale-[1.02]"
-          />
+          <a
+            href={process.env.NEXT_PUBLIC_HOME_URL || "/index.php"}
+            aria-label="Go to World IP Forum home"
+            className="inline-flex no-underline text-inherit cursor-pointer"
+          >
+            <Image
+              src="/images/wipf-world-forum-logo.png"
+              alt="World Intellectual Property Forum"
+              width={874}
+              height={296}
+              priority
+              className="w-[180px] sm:w-[220px] md:w-[260px] lg:w-[290px] xl:w-[320px] h-auto object-contain pointer-events-none transition-all duration-500 filter drop-shadow-[0_0_16px_rgba(6,182,212,0.45)] drop-shadow-[0_0_36px_rgba(59,130,246,0.25)] drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)] group-hover:drop-shadow-[0_0_24px_rgba(56,189,248,0.7)] group-hover:scale-[1.02]"
+            />
+          </a>
         </h1>
       </div>
     </header>

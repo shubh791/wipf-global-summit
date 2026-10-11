@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# World Intellectual Property Forum (WIPF) — Global Summit 2026/2027
 
-## Getting Started
+Official interactive web platform showcasing the dual global summits:
+- **AIPx Global Summit 2026** (Bangkok, Thailand)
+- **Indo Global IPR Summit 2027** (Bengaluru, India)
 
-First, run the development server:
+---
 
+## 🚀 Quick Start Guide
+
+### Prerequisites
+Make sure you have **Node.js** (v18.18 or higher, recommended v20+) installed on your system.
+- Download from: [https://nodejs.org/](https://nodejs.org/)
+
+---
+
+### Step 1: Open Terminal / Command Prompt
+Extract the zip file, open the extracted folder, and open a terminal inside it:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Verify Node is installed
+node -v
+npm -v
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Step 2: Install Dependencies
+Run:
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+### Step 3: Run the Development Server
+Run:
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Step 4: Open in Your Browser
+Visit:
+👉 [http://localhost:3000](http://localhost:3000)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🛠 Available Scripts
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `npm run dev` — Starts the local development server at `http://localhost:3000`.
+- `npm run build` — Builds the optimized production bundle.
+- `npm run start` — Starts the production server after building.
+- `npm run lint` — Runs ESLint code style and syntax checks.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
